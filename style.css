@@ -7,6 +7,9 @@
   --white-100: #ffffff;
   --white-0: #000000;
 }
+html {
+  padding: env(safe-area-inset);
+}
 
 body {
   font-family: "Roboto", sans-serif;
