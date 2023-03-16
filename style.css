@@ -23,7 +23,7 @@ body {
   color: var(--white-100);
   text-shadow: 1px 1px var(--white-0);
 
-  background: url("/static/images/background-bottom.png") bottom left -24rem no-repeat,
+  background: url("/images/corner.png") bottom left -24rem no-repeat,
     url("/images/background.png") repeat;
 
   display: flex;
