@@ -1,0 +1,174 @@
+:root {
+  --primary-shade-darkest: #4b2d63;
+  --primary-shade-dark: #584b63;
+  --primary-shade-medium: #8650b3;
+  --primary-shade-light: #ab66e3;
+  --primary-shade-lightest: #ceaee8;
+  --white-100: #ffffff;
+  --white-0: #000000;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  line-height: 1.5;
+
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+  color: var(--white-100);
+  text-shadow: 1px 1px var(--white-0);
+
+  background: url("/static/images/background-bottom.png") bottom left -24rem no-repeat,
+    url("/images/background.png") repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+}
+
+a {
+  color: var(--primary-shade-lightest);
+}
+
+a:hover,
+a:active {
+  color: var(--primary-shade-medium);
+}
+
+.container {
+  margin-top: 2rem;
+
+  padding: 2rem;
+  min-width: 50vw;
+  max-width: 1000px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  border-image: url("images/description.png") 32 24 fill / 32px 24px repeat;
+}
+
+header p {
+  text-align: justify;
+  margin-top: 1rem;
+}
+
+header p:first-of-type {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+li {
+  margin-left: 3rem;
+  list-style-type: disc;
+  text-align: justify;
+}
+
+main {
+  border-image: url("/images/tile.png") 24 24 fill / 24px 24px repeat;
+}
+
+main .asset {
+  position: relative;
+
+  width: 100%;
+}
+
+main .project {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main .project:nth-child(odd) {
+  flex-direction: column-reverse;
+}
+
+main .asset img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main picture.asset {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+main .asset::after {
+  content: "";
+
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+
+  border-image: url("/images/asset.png") 32 24 fill / 32px 24px repeat;
+}
+
+main .video {
+  position: relative;
+
+  display: flex;
+  justify-content: space-around;
+
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  width: 100%;
+  height: auto;
+
+  aspect-ratio: 16 / 9;
+}
+
+main .video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+main p {
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+main p:first-of-type {
+  margin-top: 0;
+}
+
+@media (min-width: 1200px) {
+  main .project .description {
+    padding: 1rem;
+    max-width: calc(50% - 2rem);
+  }
+
+  main .project {
+    width: 100%;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+  }
+
+  main .project > .asset,
+  main .project > .description,
+  main .project > .video {
+    max-width: calc(50% - 2rem);
+  }
+
+  main .project:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  main .video {
+    margin-top: 0;
+  }
+}
